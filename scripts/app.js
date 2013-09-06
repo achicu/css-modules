@@ -1,12 +1,17 @@
-require([
-        "htmlrewrite",
-        "css-module!../assets/css/button",
-        "text!../templates/button.html"], function(HtmlRewrite, buttonCSS, buttonTemplate) {
+define(["buttonview"], function(ButtonView) {
 
-    var html = HtmlRewrite.linkCSS(buttonTemplate, buttonCSS);
-    console.log(buttonCSS, html);
+    $(function() {
+        var buttonModel = new Backbone.Model({
+            label: "Click me!"
+        });
+        buttonModel.on("click", function() {
+            buttonModel.set("label", "Ok!");
+        });
 
-    var button = document.createElement("div");
-    button.innerHTML = html;
-    document.body.appendChild(button);
+        var button = new ButtonView({
+            model: buttonModel
+        });
+                
+        $("body").append(button.render().$el);
+    });
 });
