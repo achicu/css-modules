@@ -1,9 +1,9 @@
 [submodule "require-css"]
-	path = require-css
-	url = ./libs/require-css
+	path = libs/require-css
+	url = git@github.com:achicu/require-css.git
 [submodule "require-less"]
-	path = require-less
-	url = ./libs/require-less
+	path = libs/require-less
+	url = git@github.com:guybedford/require-less.git
 [submodule "require-text"]
-	path = require-text
-	url = ./libs/require-text
+	path = libs/require-text
+	url = https://github.com/requirejs/text.git
